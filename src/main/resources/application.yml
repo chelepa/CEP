@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: CEP-API
+  flyway:
+    enabled: true
+  datasource:
+    url: jdbc:oracle:thin:@${ORACLEDB_HOST:localhost}:${ORACLEDB_PORT:1521}:${ORACLEDB_SERVICENAME:xe}
+    username: ${ORACLEDB_USERNAME:CEP}
+    password: ${ORACLEDB_PASSWORD:CEP}
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+
+api:
+  ViaCep:
+    url: http://viacep.com.br/ws
+    path:
+      cepId: /{cepId}/json
+
+feign:
+  client:
+    config:
+      default:
+        readTimeout: 45000
+        connectTimeout: 45000
