@@ -5,5 +5,4 @@ import br.com.cep.dto.CepResponseDTO;
 public interface CepService {
 
     CepResponseDTO getCepId(String cep);
-
 }
